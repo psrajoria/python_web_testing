@@ -40,7 +40,8 @@ class Category(models.Model):
 
 
 class Expense(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='expenses')
+    project = models.ForeignKey(
+        Project, on_delete=models.CASCADE, related_name='expenses')
     title = models.CharField(max_length=100)
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
